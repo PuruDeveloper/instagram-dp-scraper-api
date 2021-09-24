@@ -7,11 +7,19 @@ const PORT = process.env.PORT || 5000;
 app.use(json());
 
 app.get("/", (req, res) => {
-  res.send("Bhak be ");
+  res.send("Welcome to my API");
+});
+
+app.get("/instagram/", (req, res) => {
+  // window.open("https://www.instagram.com/purustayshere/");
+  res.send(
+    "You are just a step behind. Now add the username in the above link after a "
+  );
 });
 
 app.get("/instagram/:profileName", (req, res) => {
   let srcText = "";
+
   const { profileName } = req.params;
   async function image(profile) {
     const browser = await puppeteer.launch({ headless: false });
