@@ -21,6 +21,7 @@ app.get("/instagram/:profileName", (req, res) => {
   let srcText = "";
 
   const { profileName } = req.params;
+  // res.send(`It may take a while to extract src of ${profileName}'s profile...`);
   async function image(profile) {
     const browser = await puppeteer.launch({ headless: false });
     try {
